@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <title>Quiz Application</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS v5.3.8 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="quiz-inner w-50 position-absolute top-50 start-50 translate-middle p-4 rounded-3"
+        style="height: 500px; background-color: rgb(191, 140, 245);">
+        <h2 class="text-center mb-4">Quiz Application</h2>
+
+        <h3 class="fs-2">
+            <span id="queNum"></span>
+            <span id="question"></span>
+        </h3>
+
+        <ul class="list-unstyled fs-3" id="option">
+
+        </ul>
+
+        <div class="button d-flex justify-content-between mt-5">
+            <button class="btn" style="background-color:rgb(201, 38, 255);" onclick="prevQue()">Prev</button>
+            <button class="btn" style="background-color:rgb(201, 38, 255);" onclick="nextQue()">Next</button>
+        </div>
+
+        <div id="timer" class="text-center fs-3 mb-3">30:00</div>
+    </div>
+
+
+    <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYJwR/VcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>

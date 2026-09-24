@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap');
+
+:root{
+    --theme--font--Boogaloo:"Boogaloo";
+}
+
+body{
+    /* background-color: rgba(119, 4, 201, 0.799); */
+    background-image: url(Images/bg-purple.jpg);
+    background-size: cover;
+}
+
+.quiz-inner{
+    background-image: url(Images/bg-purple.jpg);
+    background-size: cover;
+    background-blend-mode:soft-light;
+    font-family:var(--theme--font--Boogaloo);
+}
