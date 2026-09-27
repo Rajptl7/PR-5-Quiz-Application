@@ -95,6 +95,7 @@ let questions = [
 const displayQuestion = document.querySelector('#question');
 const displayOption = document.querySelector('#option');
 const displayQueNum = document.querySelector('#queNum');
+const displayTotalQue = document.querySelector('#totalQue');
 const timer = document.querySelector('#timer');
 
 
@@ -108,14 +109,40 @@ nextQue = ()=>{
     displayOption.innerHTML = '';
 
     if(currentQuestion >= questions.length - 1){
-        alert("All Question Completed !");
+        
+        let right = 0;
+        let wrong = 0;
+
+        questions.forEach((value, index) => {
+
+            if(selectedAnswers[index] === value.ans){
+                right++;
+            }else{
+                wrong++;
+            }
+
+        });
+
+        displayQuestion.innerHTML = `
+            Result <br>
+            Right: ${right} <br>
+            Wrong: ${wrong} <br>
+            Total: ${questions.length} <br>
+            ${right} out of ${questions.length} correct
+        `;
+
+        displayQueNum.innerHTML = '';
+
         return;
+
     }else{
         currentQuestion++;
     }
 
     displayQueNum.innerHTML = ` Q${questions[currentQuestion].id}.`;
     displayQuestion.innerHTML = questions[currentQuestion].que;
+
+    displayTotalQue.innerHTML = `Question ${currentQuestion + 1} of ${questions.length}`;
 
     questions[currentQuestion].option.forEach((value) =>{
 
@@ -135,7 +162,6 @@ nextQue = ()=>{
         radio.addEventListener('change', () =>{
             selectedAnswers[currentQuestion] = value;
 
-            // []
             console.log(selectedAnswers[currentQuestion]);
         });
 
@@ -145,6 +171,7 @@ nextQue = ()=>{
 
 
 nextQue();
+
 
 prevQue = ()=>{
 
@@ -158,6 +185,7 @@ prevQue = ()=>{
 
     displayQuestion.innerHTML = questions[currentQuestion].que;
     displayQueNum.innerHTML = ` Q${questions[currentQuestion].id}. `;
+    displayTotalQue.innerHTML = `Question ${currentQuestion + 1} of ${questions.length}`;
 
     questions[currentQuestion].option.forEach((value)=>{
 
@@ -206,4 +234,4 @@ let quizTimer = setInterval(() => {
 
     time--;
 
-}, 1);
+}, 1000);
